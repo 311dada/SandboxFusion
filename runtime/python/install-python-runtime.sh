@@ -16,7 +16,7 @@ if [ $USE_OFFICIAL_SOURCE -eq 0 ]; then
     pip3 config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 fi
 
-pip3 install setuptools wheel cython numpy
+pip3 install setuptools wheel Cython==3.0.6 numpy
 
 pip3 install -r ./requirements.txt --ignore-requires-python
 
