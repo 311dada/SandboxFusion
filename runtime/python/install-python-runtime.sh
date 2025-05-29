@@ -9,10 +9,8 @@ do
     fi
 done
 
-rm -f ~/.condarc
-conda create -n sandbox-runtime -y python=3.10
-
-source activate sandbox-runtime
+python3 -m venv /tmp/sandbox-runtime
+source /tmp/sandbox-runtime/bin/activate
 
 if [ $USE_OFFICIAL_SOURCE -eq 0 ]; then
     pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
@@ -27,4 +25,4 @@ python -c "import nltk; nltk.download('punkt')"
 python -c "import nltk; nltk.download('stopwords')"
 
 pip cache purge
-conda clean --all -y
+deactivate
