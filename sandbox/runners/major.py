@@ -85,7 +85,7 @@ async def run_python(args: CodeRunArgs) -> CodeRunResult:
 
         return await run_commands(
             None,
-            f"python {f.name}",
+            f"python3 {f.name}",
             tmp_dir,
             get_python_rt_env("sandbox-runtime"),
             args,
